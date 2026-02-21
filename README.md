@@ -30,8 +30,10 @@
 
 ## Getting Started
 
-1. **Set Keys:**
-   - Add `OPENAI_API_KEY` or `TOGETHER_API_KEY` in `www/config.env`.
+1. **Connect OpenAI (ChatGPT subscription):**
+   - Start the app and click "Connect OpenAI" in the UI to authorize via OAuth.
+   - This uses the same Codex OAuth flow as OpenCode.
+   - Make sure port 1455 is available for the local OAuth callback.
 2. **Problems Setup:**
 
    - Put your Hacker Cup-format problems into `./PROBLEMS/` (see examples)
@@ -54,7 +56,7 @@
 
 5. **Models & Config:**
 
-   - Default model: GPT-4o-mini
+   - Default model: Codex (ChatGPT subscription)
    - See `www/app/config.ts` to:
      - Switch between different LLM models
      - Adjust agent settings and parameters

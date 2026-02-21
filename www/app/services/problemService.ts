@@ -135,7 +135,15 @@ export class ProblemService {
       };
 
       const response = await fetch(url, options);
-      return response.json();
+      const body = await response.text();
+      if (!body) {
+        return { success: false, error: `Empty response (${response.status})` } as T;
+      }
+      try {
+        return JSON.parse(body) as T;
+      } catch {
+        return { success: false, error: body } as T;
+      }
     } catch (error) {
       console.error('Error in fetchApi:', error);
       return {success: false, error: error} as T;
