@@ -88,7 +88,6 @@ function buildAuthorizeUrl(redirectUri: string, pkce: PkceCodes, state: string):
     id_token_add_organizations: "true",
     codex_cli_simplified_flow: "true",
     state,
-    originator: "opencode",
   });
   return `${OPENAI_ISSUER}/oauth/authorize?${params.toString()}`;
 }

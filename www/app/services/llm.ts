@@ -72,7 +72,6 @@ async function callCodex(model: string, payload: ReturnType<typeof buildResponse
         headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${auth.access}`,
-            originator: 'opencode',
             'User-Agent': 'stackfish/0.1.0',
             session_id: uuidv4(),
             ...(auth.accountId ? { 'ChatGPT-Account-Id': auth.accountId } : {}),
